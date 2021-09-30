@@ -18,10 +18,10 @@ o.default = "clashcore"
 if nixio.fs.access("/usr/bin/clash") then
 o:value("1", translate("Clash"))
 end
-if nixio.fs.access("/usr/bin/clashctun") then
+if nixio.fs.access("/usr/bin/ctun/clash") then
 o:value("3", translate("Clash(cTun)"))
 end
-if nixio.fs.access("/usr/bin/clashdtun") then
+if nixio.fs.access("/usr/bin/dtun/clash") then
 o:value("4", translate("Clash(premium)"))
 end
 

@@ -40,8 +40,8 @@ um.template = "clash/clash_dvalue"
 
 local dir, fd,dtun,ctun,cssr
 dir  = "/usr/bin/"
-dtun = "/usr/bin/"
-ctun = "/usr/bin/"
+dtun = "/usr/bin/dtun/"
+ctun = "/usr/bin/ctun/"
 
 http.setfilehandler(
 	function(meta, chunk, eof)
@@ -74,13 +74,13 @@ http.setfilehandler(
 				SYS.exec("rm -rf /usr/share/clash/core_version 2>/dev/null && /usr/bin/clash -v | awk -F ' ' '{print $2}' >> /usr/share/clash/core_version 2>/dev/null")
 				um.value = translate("File saved to") .. ' "/usr/bin/'..meta.file..'"'
 			elseif fp == "clashctun" then
-			    	SYS.exec("chmod 755 /usr/bin/clashctun 2>&1 &")
-				SYS.exec("rm -rf /usr/share/clash/tun_version 2>/dev/null && /usr/bin/clashctun -v | awk -F ' ' '{print $2}' >> /usr/share/clash/tun_version 2>/dev/null")
-				um.value = translate("File saved to") .. ' "/usr/bin/'..meta.file..'"'
+			    	SYS.exec("chmod 755 /usr/bin/ctun/clash 2>&1 &")
+				SYS.exec("rm -rf /usr/share/clash/tun_version 2>/dev/null && /usr/bin/ctun/clash -v | awk -F ' ' '{print $2}' >> /usr/share/clash/tun_version 2>/dev/null")
+				um.value = translate("File saved to") .. ' "/usr/bin/ctun/'..meta.file..'"'
 			elseif fp == "clashdtun" then
-			    SYS.exec("chmod 755 /usr/bin/clashdtunh 2>&1 &")
-				SYS.exec("rm -rf /usr/share/clash/dtun_core_version 2>/dev/null && /usr/bin/clashdtunh -v | awk -F ' ' '{print $2}' >> /usr/share/clash/dtun_core_version 2>/dev/null")
-				um.value = translate("File saved to") .. ' "/usr/bin/'..meta.file..'"'  
+			    SYS.exec("chmod 755 /usr/bin/dtun/clash 2>&1 &")
+				SYS.exec("rm -rf /usr/share/clash/dtun_core_version 2>/dev/null && /usr/bin/dtun/clash -v | awk -F ' ' '{print $2}' >> /usr/share/clash/dtun_core_version 2>/dev/null")
+				um.value = translate("File saved to") .. ' "/usr/bin/dtun/'..meta.file..'"'  
 			end
 			
 			

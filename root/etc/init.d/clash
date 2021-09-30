@@ -4,8 +4,8 @@ START=99
 STOP=15
 
 CLASH="/usr/bin/clash"
-CLASHT="/usr/bin/clashctun"
-CLASHD="/usr/bin/clashdtun"
+CLASHT="/usr/bin/ctun/clash"
+CLASHD="/usr/bin/dtun/clash"
 CLASH_CONFIG="/etc/clash"
 CRON_FILE="/etc/crontabs/root"
 CONFIG_YAML="/etc/clash/config.yaml"
@@ -459,24 +459,24 @@ if [ "${core}" -eq 1 ] && [ ! -f /usr/bin/clash ]; then
 
 	echo "Clash for OpenWRT" >$REAL_LOG
 	exit 0
-elif  [ "${core}" -eq 3 ] && [ ! -f /usr/bin/clashctun ]; then
+elif  [ "${core}" -eq 3 ] && [ ! -f /usr/bin/ctun/clash ]; then
 	if [ "${lang}" == "en" ] || [ $lang == "auto" ];then
-		echo "  $(date "+%Y-%m-%d %H:%M:%S") - clash Tun core not found in /usr/bin/clashtun " >> /usr/share/clash/clash.txt
-		echo "clash Tun core not found in /usr/bin/clashtun" >> $REAL_LOG
+		echo "  $(date "+%Y-%m-%d %H:%M:%S") - clash Tun core not found in /usr/bin/ctun/clash " >> /usr/share/clash/clash.txt
+		echo "clash Tun core not found in /usr/bin/ctun/clash" >> $REAL_LOG
 	elif [ "${lang}" == "zh_cn" ];then
-		echo "  $(date "+%Y-%m-%d %H:%M:%S")  - 找不到/usr/bin/clashtun, clash Tun内核" >> /usr/share/clash/clash.txt
-		echo "找不到/usr/bin/clashtun, clash Tun内核" >> $REAL_LOG	
+		echo "  $(date "+%Y-%m-%d %H:%M:%S")  - 找不到/usr/bin/ctun/clash, clash Tun内核" >> /usr/share/clash/clash.txt
+		echo "找不到/usr/bin/ctun/clash, clash Tun内核" >> $REAL_LOG	
 	fi	
 	sleep 1
 	echo "Clash for OpenWRT" >$REAL_LOG
 	exit 0
-elif  [ "${core}" -eq 4 ] && [ ! -f /usr/bin/clashdtun ]; then
+elif  [ "${core}" -eq 4 ] && [ ! -f /usr/bin/dtun/clash ]; then
 	if [ "${lang}" == "en" ] || [ $lang == "auto" ];then
-		echo "  $(date "+%Y-%m-%d %H:%M:%S") - clash Tun core not found in /usr/bin/clashdtun  " >> /usr/share/clash/clash.txt
-		echo "clash Tun core not found in /usr/bin/clashdtun" >> $REAL_LOG
+		echo "  $(date "+%Y-%m-%d %H:%M:%S") - clash Tun core not found in /usr/bin/dtun/clash  " >> /usr/share/clash/clash.txt
+		echo "clash Tun core not found in /usr/bin/dtun/clash" >> $REAL_LOG
 	elif [ "${lang}" == "zh_cn" ];then
-		echo "  $(date "+%Y-%m-%d %H:%M:%S")  - 找不到/usr/bin/clashdtun clash dTun" >> /usr/share/clash/clash.txt
-		echo "找不到/usr/bin/clashdtun,clash dTun" >> $REAL_LOG		
+		echo "  $(date "+%Y-%m-%d %H:%M:%S")  - 找不到/usr/bin/dtun/clash clash dTun" >> /usr/share/clash/clash.txt
+		echo "找不到/usr/bin/dtun/clash,clash dTun" >> $REAL_LOG		
 	fi
 
 	echo "Clash for OpenWRT" >$REAL_LOG

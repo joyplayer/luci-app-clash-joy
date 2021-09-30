@@ -226,10 +226,10 @@ end
 
 
 local function clashtun_core()
-	if nixio.fs.access("/usr/bin/clashctun") then
-		local tun=luci.sys.exec("/usr/bin/clashctun -v 2>/dev/null |awk -F ' ' '{print $2}'")
+	if nixio.fs.access("/usr/bin/ctun/clash") then
+		local tun=luci.sys.exec("/usr/bin/ctun/clash -v 2>/dev/null |awk -F ' ' '{print $2}'")
 		if tun ~= "" then
-			return luci.sys.exec("/usr/bin/clashctun -v 2>/dev/null |awk -F ' ' '{print $2}'")
+			return luci.sys.exec("/usr/bin/ctun/clash -v 2>/dev/null |awk -F ' ' '{print $2}'")
 		else 
 			return luci.sys.exec("sed -n 1p /usr/share/clash/tun_version")
 		end
@@ -240,10 +240,10 @@ end
 
 
 local function dtun_core()
-	if nixio.fs.access("/usr/bin/clashdtun") then
-		local tun=luci.sys.exec("/usr/bin/clashdtun -v 2>/dev/null |awk -F ' ' '{print $2}'")
+	if nixio.fs.access("/usr/bin/dtun/clash") then
+		local tun=luci.sys.exec("/usr/bin/dtun/clash -v 2>/dev/null |awk -F ' ' '{print $2}'")
 		if tun ~= "" then
-			return luci.sys.exec("/usr/bin/clashdtun -v 2>/dev/null |awk -F ' ' '{print $2}'")
+			return luci.sys.exec("/usr/bin/dtun/clash -v 2>/dev/null |awk -F ' ' '{print $2}'")
 		else 
 			return luci.sys.exec("sed -n 1p /usr/share/clash/dtun_core_version")
 		end		

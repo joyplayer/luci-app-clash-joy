@@ -1,8 +1,8 @@
 include $(TOPDIR)/rules.mk 
 
 PKG_NAME:=luci-app-clash
-PKG_VERSION:=v1.9.2
-PKG_MAINTAINER:=joy-nine
+PKG_VERSION:=v1.8.1
+PKG_MAINTAINER:=frainzy1477(Fix by JoyNine)
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -13,7 +13,7 @@ define Package/$(PKG_NAME)
 	TITLE:=LuCI app for clash
 	DEPENDS:=+luci-base +wget +wget-ssl +iptables +coreutils-base64 +coreutils +coreutils-nohup +bash +ipset +libustream-openssl +curl +jsonfilter +ca-certificates +iptables-mod-tproxy +kmod-tun +clash
 	PKGARCH:=all
-	MAINTAINER:=joy-nine
+	MAINTAINER:=frainzy1477
 endef
 
 define Package/$(PKG_NAME)/description
